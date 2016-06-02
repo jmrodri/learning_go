@@ -3,12 +3,13 @@ package main
 import (
     "fmt"
     "os"
+    "strconv"
 )
 
 func main() {
     s, sep := "", ""
-    for _, arg := range os.Args[0:] {
-        s += sep + arg
+    for idx, arg := range os.Args[0:] {
+        s += strconv.Itoa(idx) + sep + arg + "\n"
         sep = " "
     }
     fmt.Println(s)
